@@ -38,14 +38,6 @@ public class HandView extends Module {
         .build()
     );
 
-    private final Setting<Integer> mainHandSpinSpeed = mainHand.add(new IntSetting.Builder()
-        .name("animate speed")
-        .description("animate speed")
-        .defaultValue(1)
-        .sliderMax(5)
-        .build()
-    );
-
     private final Setting<Boolean> offHandSpinX = offHand.add(new BoolSetting.Builder()
         .name("spin X")
         .description("ishak spin ?")
@@ -64,14 +56,6 @@ public class HandView extends Module {
         .name("spin Z")
         .description("ishak spin ?")
         .defaultValue(false)
-        .build()
-    );
-
-    private final Setting<Integer> offHandSpinSpeed = offHand.add(new IntSetting.Builder()
-        .name("animate speed")
-        .description("animate speed")
-        .defaultValue(1)
-        .sliderMax(5)
         .build()
     );
 
@@ -276,27 +260,67 @@ public class HandView extends Module {
         super(Categories.Render, Items.LIME_STAINED_GLASS_PANE, "hand-view", "Alters the way items are rendered in your hands.");
     }
 
-    private double changeRotate(double value, double speed) {
-        return value - speed <= 180 && value - speed > -180 ? value - speed : 180;
-    }
-
     @EventHandler
     private void onHeldItemRender(HeldItemRendererEvent event) {
         if (!isActive()) return;
 
         if (event.hand == Hand.MAIN_HAND) {
-            if (mainHandSpinX.get()) rotationXMain.set(changeRotate(rotationXMain.get(), mainHandSpinSpeed.get()));
-            if (mainHandSpinY.get()) rotationYMain.set(changeRotate(rotationYMain.get(), mainHandSpinSpeed.get()));
-            if (mainHandSpinZ.get()) rotationZMain.set(changeRotate(rotationZMain.get(), mainHandSpinSpeed.get()));
+            if (mainHandSpinX.get()) {
+                if (rotationXMain.get().floatValue() + 2 > 179) {
+                    rotXMain = -180;
+                } else {
+                    rotXMain++;
+                }
+                rotationXMain.set((double)rotXMain);
+            }
+            if (mainHandSpinY.get()) {
+                if (rotationYMain.get().floatValue() + 2 > 179) {
+                    rotYMain = -180;
+                } else {
+                    rotYMain++;
+                }
+                rotationYMain.set((double)rotYMain);
+            }
+            if (mainHandSpinZ.get()) {
+                if (rotationZMain.get().floatValue() + 2 > 179) {
+                    rotZMain = -180;
+                } else {
+                    rotZMain++;
+                }
+                rotationZMain.set((double)rotZMain);
+            }
+
             event.matrix.multiply(Vec3f.POSITIVE_X.getDegreesQuaternion(rotationXMain.get().floatValue()));
             event.matrix.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(rotationYMain.get().floatValue()));
             event.matrix.multiply(Vec3f.POSITIVE_Z.getDegreesQuaternion(rotationZMain.get().floatValue()));
             event.matrix.scale(scaleXMain.get().floatValue(), scaleYMain.get().floatValue(), scaleZMain.get().floatValue());
             event.matrix.translate(posXMain.get().floatValue(), posYMain.get().floatValue(), posZMain.get().floatValue());
         } else {
-            if (offHandSpinX.get()) rotationXOff.set(changeRotate(rotationXOff.get(), offHandSpinSpeed.get()));
-            if (offHandSpinY.get()) rotationYOff.set(changeRotate(rotationYOff.get(), offHandSpinSpeed.get()));
-            if (offHandSpinZ.get()) rotationZOff.set(changeRotate(rotationZOff.get(), offHandSpinSpeed.get()));
+            if (offHandSpinX.get()) {
+                if (rotationXOff.get().floatValue() + 2 > 179) {
+                    rotXOff = -180;
+                } else {
+                    rotXOff++;
+                }
+                rotationXOff.set((double)rotXOff);
+            }
+            if (offHandSpinY.get()) {
+                if (rotationYOff.get().floatValue() + 2 > 179) {
+                    rotYOff = -180;
+                } else {
+                    rotYOff++;
+                }
+                rotationYOff.set((double)rotYOff);
+            }
+            if (offHandSpinZ.get()) {
+                if (rotationZOff.get().floatValue() + 2 > 179) {
+                    rotZOff = -180;
+                } else {
+                    rotZOff++;
+                }
+                rotationZOff.set((double)rotZOff);
+            }
+
             event.matrix.multiply(Vec3f.POSITIVE_X.getDegreesQuaternion(rotationXOff.get().floatValue()));
             event.matrix.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(rotationYOff.get().floatValue()));
             event.matrix.multiply(Vec3f.POSITIVE_Z.getDegreesQuaternion(rotationZOff.get().floatValue()));

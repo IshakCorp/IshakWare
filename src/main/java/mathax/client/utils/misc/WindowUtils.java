@@ -16,15 +16,15 @@ public class WindowUtils {
         }
 
         public static void setTitleLoading() {
-            mc.getWindow().setTitle("IshakWare " + "v0.1 " + "is being loaded...");
+            mc.getWindow().setTitle("ZalupaWare " + "v0.1 " + "is being loaded...");
         }
 
         public static void setTitleLoaded() {
-            mc.getWindow().setTitle("IshakWare " + "v0.1 " + "loaded!");
+            mc.getWindow().setTitle("ZalupaWare " + "v0.1 " + "loaded!");
         }
 
         public static void setTitle() {
-            mc.getWindow().setTitle("IshakWare " + "v0.1 ");
+            mc.getWindow().setTitle("ZalupaWare " + "v0.1 ");
         }
     }
 

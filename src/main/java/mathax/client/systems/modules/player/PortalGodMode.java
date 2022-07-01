@@ -13,7 +13,8 @@ public class PortalGodMode extends Module{
     }
 
     @EventHandler
-    private void onTick(PacketEvent.Send event) {
+    private void POPS(PacketEvent.Send event) {
         if (event.packet instanceof TeleportConfirmC2SPacket) event.cancel();
+        toggle();
     }
 }
