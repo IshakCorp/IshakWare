@@ -20,6 +20,7 @@ import static net.minecraft.client.option.Perspective.THIRD_PERSON_BACK;
 
 
 public class BoostFly extends Module {
+    //hui
     public BoostFly() {
         super(Categories.Movement, Items.FEATHER, "boost-fly", "Pasted from bebrap$$$");
     }
