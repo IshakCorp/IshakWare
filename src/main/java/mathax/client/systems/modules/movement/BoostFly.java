@@ -138,7 +138,7 @@ public class BoostFly extends Module {
                     mc.player.setYaw((float) (mc.player.getYaw() + yawStep.get()));
                 }
                 if (mc.options.backKey.isPressed()){
-                    mc.player.addVelocity(MathHelper.sin(yaw) / 35, MathHelper.cos(pitch) * upSpeed.get() / 10, -MathHelper.cos(yaw) / 35); //TODO: NoGlide
+                    mc.player.addVelocity(MathHelper.sin(yaw) / 20, MathHelper.cos(pitch) * upSpeed.get() / 10, -MathHelper.cos(yaw) / 20); //TODO: NoGlide
                 } //Мистер флатк бля!!! Нормально на пакетах ротации сделай
             }
         }
