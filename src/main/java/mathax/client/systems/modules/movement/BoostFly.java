@@ -139,7 +139,7 @@ public class BoostFly extends Module {
                 }
                 if (mc.options.backKey.isPressed()){
                     mc.player.addVelocity(MathHelper.sin(yaw) / 20, MathHelper.cos(pitch) * upSpeed.get() / 10, -MathHelper.cos(yaw) / 20); //TODO: NoGlide
-                } //Мистер флатк бля!!! Нормально на пакетах ротации сделай
+                } //Нопека я твой рот иуууу туда суда делат
             }
         }
 
