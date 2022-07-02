@@ -109,7 +109,7 @@ public class MatHax implements ClientModInitializer {
         return Arrays.asList(
 
             // SPLASHES
-            Formatting.RED + "ZalupaWare on top!",
+            Formatting.RED + "IshakWare on top!",
             Formatting.RED + "poshelnaxui.xyz",
             Formatting.RED + "arbuz?",
             Formatting.RED + Version.getStylized(),

@@ -55,7 +55,7 @@ public class WatermarkHud extends TripleTextHudElement {
 
     protected String getLeft() {
         if (cs.changeWatermark()) return cs.watermarkText.get() + " ";
-        return "ZalupaWare ";
+        return "IshakWare ";
     }
 
     protected String getRight() {

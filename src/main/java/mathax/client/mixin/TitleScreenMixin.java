@@ -61,7 +61,7 @@ public class TitleScreenMixin extends Screen {
         int proxyUsingLength = textRenderer.getWidth(proxyUsing);
         String proxyDetails = proxy != null ? "(" + proxy.name + ") " + proxy.address + ":" + proxy.port : null;
 
-        String watermarkName = "neMatHax a ZalupaWare";
+        String watermarkName = "neMatHax a IshakWare";
         int watermarkNameLength = textRenderer.getWidth(watermarkName);
         String watermarkVersion = ver;
         int watermarkVersionLength = textRenderer.getWidth(watermarkVersion);

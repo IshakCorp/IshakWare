@@ -171,7 +171,6 @@ public class AutoEZ extends Module {
 
     private static List<String> getMessages() {
         return Arrays.asList(
-<<<<<<< HEAD
             "%player% just got raped by IshakWare!",
             "%player% just got ended by IshakWare!",
             "haha %player% is a noob! IshakWare on top!",
@@ -180,32 +179,15 @@ public class AutoEZ extends Module {
             "Take the L nerd %player%! You just got ended by IshakWare!",
             "I just nae nae'd %player% using IshakWare!",
             "I am too good for %player%! IshakWare on top!"
-=======
-            "%player% just got raped by ZalupaWare!",
-            "%player% just got ended by ZalupaWare!",
-            "haha %player% is a noob! ZalupaWare on top!",
-            "I just EZZz'd %player% using ZalupaWare!",
-            "I just fucked %player% using ZalupaWare!",
-            "Take the L nerd %player%! You just got ended by ZalupaWare!",
-            "I just nae nae'd %player% using ZalupaWare!",
-            "I am too good for %player%! ZalupaWare on top!"
->>>>>>> 44fde7b (ishak)
         );
     }
 
     private static List<String> getGGMessages() {
         return Arrays.asList(
-<<<<<<< HEAD
             "GG %player%! IshakWare is so op!",
             "Nice fight but IshakWare is better, %player%! I really enjoyed it!",
             "Close fight %player%, but IshakWare won!",
             "Good fight, %player%! IshakWare on top!"
-=======
-            "GG %player%! ZalupaWare is so op!",
-            "Nice fight but ZalupaWare is better, %player%! I really enjoyed it!",
-            "Close fight %player%, but ZalupaWare won!",
-            "Good fight, %player%! ZalupaWare on top!"
->>>>>>> 44fde7b (ishak)
         );
     }
 
@@ -244,28 +226,16 @@ public class AutoEZ extends Module {
 
     private static List<String> getTotemMessages() {
         return Arrays.asList(
-<<<<<<< HEAD
             "%player% just got popped by IshakWare!",
             "Keep popping %player%! IshakWare owns you!",
             "%player%'s totem just got ended by IshakWare!",
             "%player% just lost 1 totem thanks to IshakWare!",
             "I just easily popped %player% using IshakWare!"
-=======
-            "%player% just got popped by ZalupaWare!",
-            "Keep popping %player%! ZalupaWare owns you!",
-            "%player%'s totem just got ended by ZalupaWare!",
-            "%player% just lost 1 totem thanks to ZalupaWare!",
-            "I just easily popped %player% using ZalupaWare!"
->>>>>>> 44fde7b (ishak)
         );
     }
 
     public enum Mode {
-<<<<<<< HEAD
         MatHax("IshakWare"),
-=======
-        MatHax("ZalupaWare"),
->>>>>>> 44fde7b (ishak)
         Custom("Custom");
 
         private final String title;

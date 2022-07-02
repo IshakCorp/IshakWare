@@ -41,7 +41,7 @@ public class ClientSpoof extends Module {
     public final Setting<String> watermarkText = sgWatermark.add(new StringSetting.Builder()
         .name("text")
         .description("The text to replace the watermark with.")
-        .defaultValue("ZalupaWare Client")
+        .defaultValue("IshakWare Client")
         .build()
     );
 
@@ -64,7 +64,7 @@ public class ClientSpoof extends Module {
     public final Setting<String> chatFeedbackText = sgChatFeedback.add(new StringSetting.Builder()
         .name("text")
         .description("The text to replace chat feedback with.")
-        .defaultValue("ZalupaWare")
+        .defaultValue("IshakWare")
         .build()
     );
 
