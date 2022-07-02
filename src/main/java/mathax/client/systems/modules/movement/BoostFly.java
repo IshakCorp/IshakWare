@@ -16,12 +16,10 @@ import mathax.client.settings.BoolSetting;
 import mathax.client.settings.Setting;
 import net.minecraft.item.Items;
 
-import static mathax.client.systems.modules.render.FreeLook.Mode.Camera;
+import static net.minecraft.client.option.Perspective.THIRD_PERSON_BACK;
 
 
 public class BoostFly extends Module {
-
-    public boolean sex;
     public BoostFly() {
         super(Categories.Movement, Items.FEATHER, "boost-fly", "Pasted from bebrap$$$");
     }
@@ -68,6 +66,12 @@ public class BoostFly extends Module {
         .defaultValue(false)
         .build()
     );
+    public final Setting<Boolean> freeLook = sgGeneral.add(new BoolSetting.Builder()
+        .name("FreeLook")
+        .description("Use FreeLook for WASD-mode")
+        .defaultValue(false)
+        .build()
+    );
     public final Setting<Boolean> pressForward = sgGeneral.add(new BoolSetting.Builder()
         .name("auto-pilot")
         .description("Auto press W key...")
@@ -92,7 +96,7 @@ public class BoostFly extends Module {
         float yaw = (float) Math.toRadians(mc.player.getYaw());
         float pitch = (float) Math.toRadians(mc.player.getPitch());
 
-        if(WASD.get()){
+        if(WASD.get() && freeLook.get()){
             if (!mc.player.isFallFlying()){
                 if (Modules.get().get(FreeLook.class).isActive()){
                     Modules.get().get(FreeLook.class).forceToggle(false);
@@ -102,8 +106,9 @@ public class BoostFly extends Module {
                     Modules.get().get(FreeLook.class).forceToggle(true);
                     Modules.get().get(FreeLook.class).mode.set(FreeLook.Mode.Camera);
                 }
+                if(mc.options.getPerspective() != THIRD_PERSON_BACK) mc.options.setPerspective(THIRD_PERSON_BACK); //Жесточайший фикс поломки фрилука через f5
             }
-        }
+        } else if ((!WASD.get() || !freeLook.get()) && Modules.get().get(FreeLook.class).isActive()) Modules.get().get(FreeLook.class).forceToggle(false);
 
         if (mc.player.isFallFlying()) {
             if (pressForward.get()) {
